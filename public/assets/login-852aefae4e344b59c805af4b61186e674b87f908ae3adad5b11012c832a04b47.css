@@ -1,0 +1,7 @@
+/* line 4, /app/app/assets/stylesheets/login.scss */
+.form-signin {
+  width: 50%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
