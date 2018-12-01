@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light border-bottom">
+  <a class="navbar-brand" href="#">KArender 税理士のための顧客管理ツール</a>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#Navber" aria-controls="Navber" aria-expanded="false" aria-label="ナビゲーションの切替">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="Navber">
+    <ul class="navbar-nav mr-auto">
+      <!-- タスク進捗バー -->
+      <li class="nav-item dropdown">
+        <a  href="#" class="nav-link dropdown-toggle" id="taskProgress" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-tasks fa-fw"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="taskProgress">
+          <div class="dropdown-item">
+            <strong>期間毎のタスク進捗率</strong>
+          </div>
+          <!-- 1ヶ月 -->
+          <div class="dropdown-item">
+            <p>
+              <strong>1ヶ月以内:</strong><span class="pull-right"><%= @result[:one_month] %>%</span>
+            </p>
+            <div class="progress progress-striped active">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <%= @result[:one_month] %>%"></div>
+            </div>
+          </div>
+          <!-- /1ヶ月 -->
+          <!-- 3ヶ月 -->
+          <div class="dropdown-item">
+            <p>
+              <strong>3ヶ月以内:</strong><span class="pull-right"><%= @result[:three_month] %>%</span>
+            </p>
+            <div class="progress progress-striped active">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <%= @result[:three_month] %>%"></div>
+            </div>
+          </div>
+          <!-- /3ヶ月 -->
+          <!-- 半年 -->
+          <div class="dropdown-item">
+            <p>
+              <strong>半年以内:</strong><span class="pull-right"><%= @result[:half_year] %>%</span>
+            </p>
+            <div class="progress progress-striped active">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <%= @result[:half_year] %>%"></div>
+            </div>
+          </div>
+          <!-- /半年 -->
+          <!-- 1年 -->
+          <div class="dropdown-item">
+            <p>
+              <strong>1年以内:</strong><span class="pull-right"><%= @result[:year] %>%</span>
+            </p>
+            <div class="progress progress-striped active">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <%= @result[:year] %>%"></div>
+            </div>
+          </div>
+          <!-- /1年-->
+          <div class="dropdown-item">
+            <a class="text-center" href="/suggestion">
+              <strong>全て見る</strong>
+            </a>
+          </div>
+        </div>
+      </li>
+      <!-- /タスク進捗バー -->
+      <!-- ユーザ情報 -->
+      <li class="nav-item dropdown">
+        <a  href="#" class="nav-link dropdown-toggle" id="userInfo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-user fa-fw"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="userInfo">
+          <div class="dropdown-item">
+            <a href="#" class="disabled"><i class="fa fa-user fa-fw"></i> <%= @user_nm %></a>
+          </div>
+          <div class="dropdown-item">
+            <i class="fa fa-gear fa-fw"></i> Settings</a>
+          </div>
+          <div class="dropdown-item">
+            <%= link_to :controller => "logout", :action => "index" do %>
+              <i class="fa fa-sign-out fa-fw"></i> ログアウト
+            <% end %>
+          </div>
+        </div>
+      </li>
+      <!-- /ユーザ情報 -->
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>

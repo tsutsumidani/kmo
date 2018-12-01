@@ -1,0 +1,38 @@
+<main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <div class="inner-header">
+      <h4 class="page-header"><i class="fa fa-bar-chart-o fa-fw"></i> 顧客情報一覧</h4>
+    </div>
+  </div>
+  <!-- /.col-lg-12 -->
+  <div class="datas">
+    <% if !@home_form.client_list.nil? then %>
+    <% @home_form.client_list.each do |client| %>
+      <h5 class="page-header">
+        <%= link_to :controller => "client_info", :action => "index", :client_id => client.id do %>
+          <%= client.client_nm %>
+        <% end %>
+      </h5>
+      <div class="data-set clearfix mb-3">
+        <div class="data-area card card-default col-md-8 col-lg-8 float-left">
+          <div class="card-body">
+            <canvas id="client_<%= client.id %>"></canvas>
+          </div>
+        </div>
+        <div class="side-menu card card-default col-md-4 col-lg-4 float-right border border-0">
+          <%= render :partial => 'home/infos', :locals => { client: client } %>
+        </div>
+        <!-- /.col-lg-4 -->
+      </div>
+    <% end %>
+    <% else %>
+      <li class="list-group-item list-group-item-info">登録済みの会社情報はまだありません</li>
+    <% end %>
+    </div>
+  </div>
+  <!-- /.row -->
+</main>
+<!-- /#page-wrapper -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+<%= javascript_include_tag 'home' %>

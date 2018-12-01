@@ -1,0 +1,24 @@
+// Place all the styles related to the csv_import controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// Place all the styles related to the csv_import controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table {
+  table-layout: fixed;
+}
+
+td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search_item {
+  padding: 10pt;
+}
+
+.select-file {
+  padding: 10pt;
+}

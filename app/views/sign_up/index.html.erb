@@ -1,0 +1,46 @@
+<div class="container">
+  <%= form_tag('/sign_up/register', method: :post) do %>
+    <div class="form-group">
+      <label>名前（姓）</label>
+      <div class="row">
+        <div class="col-xs-4 first_name">
+          <input type="text" name="first_name" class="form-control" size="30">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>名前（名）</label>
+      <div class="row">
+        <div class="col-xs-4 last_name">
+          <input type="text" name="last_name" class="form-control" size="30">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Eメール</label>
+      <div class="row">
+        <div class="col-xs-4 email">
+          <input type="text" name="email" class="form-control" size="30">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>パスワード</label>
+      <div class="row">
+        <div class="col-xs-4 password">
+          <input type="text" name="password" class="form-control">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>パスワード再入力</label>
+      <div class="row">
+        <div class="col-xs-4 password_confirmation">
+          <input type="text" name="password_confirmation" class="form-control">
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-default">登録</button>
+  <% end %>
+</div>
+<%= javascript_include_tag 'sign_up' %>

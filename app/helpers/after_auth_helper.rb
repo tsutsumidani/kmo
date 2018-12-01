@@ -1,0 +1,2 @@
+module AfterAuthHelper
+end

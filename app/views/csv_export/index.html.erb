@@ -1,0 +1,30 @@
+<% content_for :title do %>
+CSV出力
+<% end %>
+
+<main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <div class="inner-header">
+      <h4 class="page-header"><i class="fa fa-download fa-fw"></i> CSV出力</h4>
+    </div>
+  </div>
+  <%= form_tag({controller: "csv_export", action: "export", method: "post"}, {multipart: true}) do %>
+    <div class="client-dropdown">
+      <%= select :client, :id, @csv_export_form.client_list %>
+    </div>
+    <select name="period-from">
+    <% @csv_export_form.period_list.each do |period| %>
+      <option value="<%= period %>"><%= period %></option>
+    <% end %>
+    </select>
+    <select name="period-to">
+    <% @csv_export_form.period_list.each do |period| %>
+      <option value="<%= period %>"><%= period %></option>
+    <% end %>
+    </select>
+    <div class="export-file">
+      <button type="submit" class="btn btn-primary mx-auto d-block">出力</button>
+    </div>
+  <% end %>
+</main>
+<%= javascript_include_tag 'csv_export' %>
