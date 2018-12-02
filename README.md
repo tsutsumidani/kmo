@@ -58,11 +58,7 @@
    Use Ctrl-C to stop
    ```
 
-3. ブラウザのURLバーに`localhost:3030`と入力。下のような画面が表示されればアプリが見えている状態。
-
-   ![https://user-images.githubusercontent.com/15089654/49336793-2dbb5800-f64c-11e8-9185-768ec51de6e4.png](/Users/k_n/Desktop/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202018-12-02%2015.41.48.png)
-
-
+3. ブラウザのURLバーに`localhost:3030`と入力。Yey! You're on Rails! とか書いた画面表示されたら正常。
 
    `localhost:3030/login`とか、作成したページのURLを入力してやるとよい。
 
